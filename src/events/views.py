@@ -1,4 +1,5 @@
 import rest_framework.generics
+from rest_framework.permissions import IsAuthenticated
 
 from src.events.models import Event
 from src.events.serializers import EventSerializer
@@ -11,4 +12,5 @@ class EventList(rest_framework.generics.ListAPIView):
         .all()
     )
     serializer_class = EventSerializer
+    permission_classes = [IsAuthenticated]
     filterset_fields = ["name"]
