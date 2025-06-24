@@ -13,6 +13,9 @@ class Place(models.Model):
         max_length=255,
     )
 
+    def __str__(self):
+        return self.name
+
 
 class Event(models.Model):
     class EventStatus(models.TextChoices):
