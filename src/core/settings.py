@@ -23,7 +23,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_filters",
     "rest_framework",
+    "rest_framework_simplejwt",
     "src.events.apps.EventsConfig",
+    "src.users.apps.UsersConfig",
     "drf_spectacular",
 ]
 
@@ -99,6 +101,9 @@ REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 10,
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
 }
 
 SPECTACULAR_SETTINGS = {
